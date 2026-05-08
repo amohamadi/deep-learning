@@ -3,7 +3,6 @@ from collections import Counter, defaultdict
 def get_vocab(text):
     vocab = {}
     for word in text.split():
-        # هر کلمه رو به کاراکتر + فاصله آخرش تبدیل می‌کنیم
         chars = ' '.join(list(word)) + ' </w>'
         vocab[chars] = vocab.get(chars, 0) + 1
     return vocab

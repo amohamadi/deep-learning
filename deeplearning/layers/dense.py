@@ -1,4 +1,4 @@
-from layer import Layer
+from ..layer import Layer
 import numpy as np
 
 
@@ -17,13 +17,12 @@ class Dense(Layer):
         return self.output
  
     def backward(self, output_error, learning_rate):
-        batch_size = output_error.shape[0] # تعداد داده‌ها در این دسته
+        batch_size = output_error.shape[0] 
         
         input_error = np.dot(output_error, self.weights.T)
         weights_error = np.dot(self.input.T, output_error)
         bias_error = np.sum(output_error, axis=0, keepdims=True)
     
-        # آپدیت پارامترها (تقسیم بر batch_size برای پایداری)
         self.weights -= learning_rate * (weights_error / batch_size)
         self.bias -= learning_rate * (bias_error / batch_size)
     
