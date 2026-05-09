@@ -1,4 +1,4 @@
-# Deep Learning Learning Repository
+# Deep Learning From Scratch 
 
 This repository is designed as a clean and simple learning environment for understanding core deep learning concepts from scratch.
 
